@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: unless-stopped
+    depends_on:
+      - database
+    volumes:
+      - ./:/app/
+    env_file:
+      - app.env
+    ports:
+      - 8000:8000
+  database:
+    image: postgres:13
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=example_password
+      - POSTGRES_DB=example_db
+    ports:
+      - 5432:5432
