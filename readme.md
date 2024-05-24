@@ -17,11 +17,11 @@ It keeps track of the number of times every single product is queried by an anon
 
 ## Architecture overview
 
-- App:
-- Celery:
-- PostgreSQL:
-- Redis:
-- NGINX:
+- **App**: The core application, built with Django Rest Framework, handles the API endpoints, business logic, and data validation. It interacts with other components in the architecture.
+- **Celery**: An asynchronous task queue used for handling background jobs and scheduling tasks. It allows the system to offload long-running processes, such as sending emails.
+- **PostgreSQL**: Open-source relational database used for storing and managing the application's structured data.
+- **Redis**: Facilitates communication between different components through its pub/sub capabilities, enhancing the application's performance and scalability.
+- **Nginx**: Improves the overall reliability and scalability of the system by efficiently distributing incoming traffic and handling SSL termination.
 
 ![Project Diagram](./assets/diagram.png)
 

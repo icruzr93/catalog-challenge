@@ -1,22 +1,16 @@
-# Use an official Python runtime as a parent image
 FROM python:3.9-slim-buster
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-# Set the working directory in the container to /app
 WORKDIR /app
 
-# Add the current directory files (on your machine) to the container
-ADD . /app/
+ADD ./requirements.txt /app/
 
-# Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip
+RUN pip install gunicorn
 RUN pip install -r requirements.txt
 
-# Expose the port server is running on
-EXPOSE 8000
+ADD ./manage.py /app/manage.py
+ADD ./config /app/config
+ADD ./scripts /app/scripts
 
-# Start the server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+RUN chmod +x /app/scripts/entry-server.sh
+RUN chmod +x /app/scripts/entry-worker.sh
