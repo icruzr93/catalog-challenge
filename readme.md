@@ -15,18 +15,32 @@ Whenever an admin user makes a change in a product (for example, if a price is a
 
 It keeps track of the number of times every single product is queried by an anonymous user.
 
+## Architecture diagram
+
+![Project Diagram](./assets/diagram.png)
+
 ## Commands
 
-docker build -t catalog .
+Start commands:
 
-docker compose exec app black .
+```sh
+docker compose up
+```
 
-docker compose exec app pip freeze > requirements.txt
+Development commands:
 
-docker compose exec app isort . --profile black
-
+```sh
 docker compose exec app python manage.py makemigrations
 
 docker compose exec app python manage.py migrate
 
-docker compose exec app python manage.py startapp auth
+docker compose exec app pip freeze > requirements.txt
+```
+
+Lint commands
+
+```sh
+docker compose exec app black .
+
+docker compose exec app isort . --profile black
+```
