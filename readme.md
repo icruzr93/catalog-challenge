@@ -15,7 +15,13 @@ Whenever an admin user makes a change in a product (for example, if a price is a
 
 It keeps track of the number of times every single product is queried by an anonymous user.
 
-## Architecture diagram
+## Architecture overview
+
+- App:
+- Celery:
+- PostgreSQL:
+- Redis:
+- NGINX:
 
 ![Project Diagram](./assets/diagram.png)
 
