@@ -5,7 +5,7 @@ from .mixins import CatalogMixin
 
 class Brand(CatalogMixin):
     name = models.CharField()
-    description = models.CharField()
+    description = models.CharField(null=True)
 
     def __str__(self):
         return self.name

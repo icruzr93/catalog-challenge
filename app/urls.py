@@ -1,15 +1,8 @@
 from django.contrib import admin
-from django.urls import path
-
-from app.catalog.urls import products_urlpatterns
-from app.core.urls import users_urlpatterns
-
+from django.urls import include, path
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("api/catalog/", include("app.catalog.urls")),
+    path("api/core/", include("app.core.urls")),
 ]
-
-
-# add new urls
-urlpatterns += products_urlpatterns
-urlpatterns += users_urlpatterns

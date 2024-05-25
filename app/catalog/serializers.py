@@ -14,14 +14,12 @@ class BrandSerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    brand = BrandSerializer()
-
     class Meta:
         model = Product
         fields = (
             "id",
             "name",
-            "brand",
+            "brand_id",
             "sku",
             "price",
         )
