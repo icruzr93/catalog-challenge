@@ -17,14 +17,14 @@ It keeps track of the number of times every single product is queried by an anon
 
 ### Developer notes:
 
-> Some technical gotchas I found were the need of decoupling the email action out of the api due that It could affect in case the mailing service failed or could be out of service in this cases it could lead to the api to not respond as expected and thankfully to the use of a queue system if email sending were facing this problem it could give us the chance of fix the problem and not loss the pending mailing actions.
+Some technical gotchas I found were the need of decoupling the email action out of the api due that It could affect in case the mailing service failed or could be out of service in this cases it could lead to the api to not respond as expected and thankfully to the use of a queue system if email sending were facing this problem it could give us the chance of fix the problem and not loss the pending mailing actions.
 
-> I list all achieved features:
-> = User, Product and Brand CRUD operations implemented via DRF APIViews.
-> = CRUD operations restricted as specified in "Description of the project".
-> = Async events on mailing operations.
-> = Contenerization and integration of a variety of services (listed below) via docker and docker compose.
-> = Intetrations tests added for User, Product and Brand endpoints.
+I list all achieved features:
+- User, Product and Brand CRUD operations implemented via DRF APIViews.
+- CRUD operations restricted as specified in "Description of the project".
+- Async events on mailing operations.
+- Contenerization and integration of a variety of services (listed below) via docker and docker compose.
+- Intetrations tests added for User, Product and Brand endpoints.
 
 ## Architecture overview
 
