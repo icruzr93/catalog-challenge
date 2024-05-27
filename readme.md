@@ -34,7 +34,7 @@ It keeps track of the number of times every single product is queried by an anon
 - **Redis**: Facilitates communication between different components through its pub/sub capabilities, enhancing the application's performance and scalability.
 - **Nginx**: Improves the overall reliability and scalability of the system by efficiently distributing incoming traffic and handling SSL termination.
 
-![Project Diagram](./assets/diagram.png)
+![Project Diagram](./docs/diagram.png)
 
 ## Getting Started
 
@@ -49,6 +49,14 @@ Start project:
 ```sh
 docker compose up
 ```
+
+Setup postman collection
+
+![Setup Postman](./docs/postman-setup.png)
+
+Setup DB Connection
+
+![Setup Postman](./docs/db-connection.png)
 
 ## Other commands
 
