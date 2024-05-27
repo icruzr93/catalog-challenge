@@ -50,6 +50,12 @@ Start project:
 docker compose up
 ```
 
+Create superuser:
+
+```sh
+docker compose exec app python manage.py createsuperuser
+```
+
 Setup postman collection
 
 ![Setup Postman](./docs/postman-setup.png)
