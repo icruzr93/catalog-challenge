@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "app.catalog",
     "app.core",
+    "app.channel",
 ]
 
 MIDDLEWARE = [
