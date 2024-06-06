@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class CatalogMixin(models.Model):
+class ModelsMixin(models.Model):
     class Meta:
         abstract = True
 

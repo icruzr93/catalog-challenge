@@ -1,9 +1,9 @@
 from django.db import models
 
-from .mixins import CatalogMixin
+from app.core.mixins import ModelsMixin
 
 
-class Brand(CatalogMixin):
+class Brand(ModelsMixin):
     name = models.CharField()
     description = models.CharField(null=True)
 
@@ -11,7 +11,7 @@ class Brand(CatalogMixin):
         return self.name
 
 
-class Product(CatalogMixin):
+class Product(ModelsMixin):
     sku = models.CharField(max_length=32, unique=True)
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
